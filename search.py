@@ -21,7 +21,7 @@ from utils.eval_utils import *
 from modeling.sync_batchnorm.replicate import patch_replication_callback
 from modeling.model_search import Model_search
 from modeling.model_net_search import *
-from decoding.decoding_formulas import Decoder
+from Decoding.decoding_formulas import Decoder
 
 import apex
 
