@@ -11,7 +11,7 @@ from dataloaders import custom_transforms as tr
 
 def twoTrainSeg(args, root=Path.db_root_dir('cityscapes')):
     images_base = os.path.join(root, 'leftImg8bit', 'train')
-    train_files = [os.path.join(looproot, 'gtFine_trainvaltest', filename) for looproot, _, filenames in os.walk(images_base)
+    train_files = [os.path.join(looproot, filename) for looproot, _, filenames in os.walk(images_base)
      for filename in filenames if filename.endswith('.png')]
     number_images = len(train_files)
     permuted_indices_ls = np.random.permutation(number_images)
@@ -34,7 +34,7 @@ class CityscapesSegmentation(data.Dataset):
         self.files = {}
         self.search = search
         self.images_base = os.path.join(self.root, 'leftImg8bit', self.split)
-        self.annotations_base = os.path.join(self.root, 'gtFine', self.split)
+        self.annotations_base = os.path.join(self.root, 'gtFine_trainvaltest', 'gtFine', self.split)
 
         self.files[split] = self.recursive_glob(rootdir=self.images_base, suffix='.png')
 
