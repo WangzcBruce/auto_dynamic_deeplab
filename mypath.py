@@ -6,7 +6,7 @@ class Path(object):
         elif dataset == 'sbd':
             return 'your path to sbd dataset'  # folder that contains dataset/.
         elif dataset == 'cityscapes':
-            return '/kaggle/input/cityscapes-leftimg8bit-trainvaltest/'     # foler that contains leftImg8bit/
+            return '/kaggle/input/cityscapes/'     # foler that contains leftImg8bit/
         else:
             print('Dataset {} not available.'.format(dataset))
             raise NotImplementedError
